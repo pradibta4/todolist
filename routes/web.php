@@ -24,8 +24,12 @@ use App\Http\Controllers\ProfileController;
 
 // Rute Publik (Login, Register)
 Route::get('/', function () {
-    return view('welcome'); // Halaman landing atau redirect ke login
-})->name('welcome');
+    return view('dashboard');
+})->name('dashboard');
+
+Route::get('/login', function () {
+    return view('login');
+})->name('login');
 
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);
@@ -35,10 +39,6 @@ Route::post('/register', [RegisterController::class, 'register']);
 // Rute yang memerlukan autentikasi
 Route::middleware('auth')->group(function () {
     Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
-
-    Route::get('/dashboard', function () {
-        return view('dashboard'); // Dashboard setelah login
-    })->name('dashboard');
 
     // Solo Tasks
     Route::prefix('solo-tasks')->name('solo_tasks.')->group(function () {
