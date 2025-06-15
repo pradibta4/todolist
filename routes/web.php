@@ -46,3 +46,11 @@ Route::get('/individu', function () {
 Route::get('/team', function () {
     return view('team');
 })->name('team');
+
+Route::get('/teamForum', function () {
+    return view('teamForum');
+})->name('teamForum');
+
+Route::get('/member', function () {
+    return view('member');
+})->name('member');

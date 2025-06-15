@@ -50,27 +50,30 @@
         }
     </style>
 </head>
-<body class="min-h-screen flex items-center justify-center relative dot-large-top-left dot-medium-top-right dot-small-top-right dot-large-bottom-left">
+
+<body class="min-h-screen flex items-center justify-center relative dot-large-top-left dot-medium-top-right dot-small-top-right dot-large-bottom-left bg-[var(--bg-color)]">
 
     <div class="absolute inset-0 bg-primary-dark-bg z-0"></div>
 
     <div class="relative z-10 p-8">
-        <h1 class="text-xl md:text-3xl font-semibold text-center text-text-light mb-12 select-none">
+        <h1 class="text-xl md:text-3xl font-semibold text-center text-text-light mb-12 select-none text-white">
             Choose Task Type
         </h1>
 
         <div class="flex flex-col md:flex-row gap-8 justify-center items-center">
 
-            <a href="/individu" class="bg-card-bg rounded-xl shadow-lg p-8 w-80 h-72 flex flex-col items-center justify-center text-center cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-xl hover:ring-2 hover:ring-accent-purple">
+            <a href="/individu" class="bg-card-bg rounded-xl shadow-lg p-8 w-80 h-72 flex flex-col items-center justify-center text-center cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-xl hover:ring-2 hover:ring-accent-purple 
+            bg-[#443C68] hover:bg-[#281F50]">
                 <img src="{{ asset('img/User.png') }}" alt="Individual Icon" class="w-20 h-20 mb-4">
-                <h2 class="text-2xl font-semibold text-text-light mb-2">Individual</h2>
-                <p class="text-sm text-gray-400">A personal task managed on your own.</p>
+                <h2 class="text-2xl font-semibold text-text-light mb-2 text-white">Individual</h2>
+                <p class="text-sm text-white">A personal task managed on your own.</p>
             </a>
 
-            <a href="/team" class="bg-card-bg rounded-xl shadow-lg p-8 w-80 h-72 flex flex-col items-center justify-center text-center cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-xl hover:ring-2 hover:ring-accent-purple">
+            <a href="/team" class="bg-card-bg rounded-xl shadow-lg p-8 w-80 h-72 flex flex-col items-center justify-center text-center cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-xl hover:ring-2 hover:ring-accent-purple
+            bg-[#443C68] hover:bg-[#281F50]">
                 <img src="{{ asset('img/Users-team.png') }}" alt="Team Icon" class="w-20 h-20 mb-4">
-                <h2 class="text-2xl font-semibold text-text-light mb-2">Team</h2>
-                <p class="text-sm text-gray-400">A collaborative task handled with your team.</p>
+                <h2 class="text-2xl font-semibold text-text-light mb-2 text-white">Team</h2>
+                <p class="text-sm text-white">A collaborative task handled with your team.</p>
             </a>
 
         </div>
