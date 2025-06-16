@@ -17,6 +17,7 @@
         "vite": "^6.2.4"
     },
     "dependencies": {
-        "@tailwindcss/cli": "^4.1.10"
+        "@tailwindcss/cli": "^4.1.10",
+        "alpinejs": "^3.14.9"
     }
 }
