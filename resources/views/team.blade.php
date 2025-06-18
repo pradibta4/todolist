@@ -8,11 +8,11 @@
     <title>Nugas - Team</title>
 </head>
 
-<body class="antialiased font-sans bg-gray-200">
+<body class="antialiased font-sans bg-[var(--bg-color)]">
 
    <div class="container mx-auto px-4 sm:px-8">
     <div class="py-8">
-        <div class="flex justify-end mb-6"> <a class="inline-block rounded-sm border border-indigo-600 bg-indigo-600 px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-indigo-600 focus:ring-3 focus:outline-hidden"
+        <div class="flex justify-end mb-6"> <a class="inline-block rounded-sm border border-transparent bg-[#443C68] hover:bg-[#281F50] px-12 py-3 text-sm font-medium text-white focus:ring-3 focus:outline-hidden"
                 href="#">
                 Create a Team
             </a>
@@ -21,100 +21,75 @@
         <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
             <div class="inline-block min-w-full shadow rounded-lg overflow-hidden">
                 <table class="min-w-full leading-normal">
-                    <thead>
+                    <thead class="bg-[#443C68] text-white">
                         <tr>
                             <th
-                                class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                class="px-5 py-3 border-b-2 border-gray-200 text-left text-xs font-semibold uppercase tracking-wider">
                                 Team Name
                             </th>
                             <th
-                                class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                class="px-5 py-3 border-b-2 border-gray-200 text-left text-xs font-semibold uppercase tracking-wider">
                                 Role
                             </th>
                             <th
-                                class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                class="px-5 py-3 border-b-2 border-gray-200 text-left text-xs font-semibold uppercase tracking-wider">
                                 Progress </th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                    <tbody class="bg-[#635985] text-white"> <tr>
+                            <td class="px-5 py-5 border-b border-gray-200 text-sm">
                                 <div class="flex items-center">
-                                    <div class="flex-shrink-0 w-10 h-10">
-                                        <img class="w-full h-full rounded-full"
-                                            src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.2&w=160&h=160&q=80"
-                                            alt="" />
-                                    </div>
                                     <div class="ml-3">
-                                        <p class="text-gray-900 whitespace-no-wrap">
-                                            Vera Carpenter
+                                        <p class="whitespace-no-wrap"> Kelompok PBO
                                         </p>
                                     </div>
                                 </div>
                             </td>
-                            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                <p class="text-gray-900 whitespace-no-wrap">Admin</p>
-                            </td>
-                            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                            <td class="px-5 py-5 border-b border-gray-200 text-sm">
+                                <p class="whitespace-no-wrap">Admin</p> </td>
+                            <td class="px-5 py-5 border-b border-gray-200 text-sm">
                                 <span
                                     class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
-                                    <span aria-hidden
-                                        class="absolute inset-0 bg-green-200 opacity-50 rounded-full"></span>
-                                    <span class="relative">Activo</span>
+                                    <span aria-hidden class="absolute inset-0"></span>
+                                    <span class="relative">100%</span>
                                 </span>
                             </td>
                         </tr>
                         <tr>
-                            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                            <td class="px-5 py-5 border-b border-gray-200 text-sm">
                                 <div class="flex items-center">
-                                    <div class="flex-shrink-0 w-10 h-10">
-                                        <img class="w-full h-full rounded-full"
-                                            src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.2&w=160&h=160&q=80"
-                                            alt="" />
-                                    </div>
                                     <div class="ml-3">
-                                        <p class="text-gray-900 whitespace-no-wrap">
-                                            Blake Bowman
+                                        <p class="whitespace-no-wrap"> Kelompok RPL
                                         </p>
                                     </div>
                                 </div>
                             </td>
-                            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                <p class="text-gray-900 whitespace-no-wrap">Editor</p>
-                            </td>
-                            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                <span
-                                    class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
-                                    <span aria-hidden
-                                        class="absolute inset-0 bg-green-200 opacity-50 rounded-full"></span>
-                                    <span class="relative">Activo</span>
-                                </span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="px-5 py-5 bg-white text-sm">
-                                <div class="flex items-center">
-                                    <div class="flex-shrink-0 w-10 h-10">
-                                        <img class="w-full h-full rounded-full"
-                                            src="https://images.unsplash.com/photo-1540845511934-7721dd7adec3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.2&w=160&h=160&q=80"
-                                            alt="" />
-                                    </div>
-                                    <div class="ml-3">
-                                        <p class="text-gray-900 whitespace-no-wrap">
-                                            Dana Moore
-                                        </p>
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="px-5 py-5 bg-white text-sm">
-                                <p class="text-gray-900 whitespace-no-wrap">Admin</p>
-                            </td>
-                            <td class="px-5 py-5 bg-white text-sm">
+                            <td class="px-5 py-5 border-b border-gray-200 text-sm">
+                                <p class="whitespace-no-wrap">Member</p> </td>
+                            <td class="px-5 py-5 border-b border-gray-200 text-sm">
                                 <span
                                     class="relative inline-block px-3 py-1 font-semibold text-red-900 leading-tight">
-                                    <span aria-hidden
-                                        class="absolute inset-0 bg-red-200 opacity-50 rounded-full"></span>
-                                    <span class="relative">Inactive</span>
+                                    <span aria-hidden class="absolute inset-0"></span>
+                                    <span class="relative">50%</span>
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="px-5 py-5 text-sm">
+                                <div class="flex items-center">
+                                    <div class="ml-3">
+                                        <p class="whitespace-no-wrap"> Proyek Fakultas
+                                        </p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-5 py-5 text-sm">
+                                <p class="whitespace-no-wrap">Member</p> </td>
+                            <td class="px-5 py-5 text-sm">
+                                <span
+                                    class="relative inline-block px-3 py-1 font-semibold text-red-900 leading-tight">
+                                    <span aria-hidden class="absolute inset-0"></span>
+                                    <span class="relative">20%</span>
                                 </span>
                             </td>
                         </tr>
