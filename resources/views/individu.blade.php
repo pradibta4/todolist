@@ -132,12 +132,6 @@
                                         <option value="done">Done</option>
                                     </select>
                                 </td>
-                                <td class="px-5 py-5 text-sm">
-                                    <button @click="deleteTask(index)" 
-                                            class="text-red-600 hover:text-red-900 transition-colors">
-                                        Delete
-                                    </button>
-                                </td>
                             </tr>
                         </template>
                     </tbody>
