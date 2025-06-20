@@ -132,6 +132,46 @@
                                             </select>
                                         </div>
                                     </div>
+
+                                    <!-- Assigned To Dropdown -->
+                                    <div class="sm:col-span-3">
+                                        <label class="block text-sm font-medium text-gray-900 mb-2">
+                                            Assigned to <span class="text-red-500">*</span>
+                                        </label>
+                                        <div class="sm:col-span-3">
+                                            <button type="button" 
+                                                    class="relative w-full cursor-pointer rounded-md bg-white py-2.5 pl-3 pr-10 text-left text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-[#443C68] sm:text-sm transition-colors"
+                                                    @click="showAssignedDropdown = !showAssignedDropdown"
+                                                    @click.away="showAssignedDropdown = false">
+                                                <span class="flex items-center">
+                                                    <img :src="selectedAssignee.avatar" 
+                                                         alt="" 
+                                                         class="h-6 w-6 flex-shrink-0 rounded-full" />
+                                                    <span class="ml-3 block truncate font-medium" x-text="selectedAssignee.name"></span>
+                                                </span>
+                                                <span class="pointer-events-none absolute inset-y-0 right-0 ml-3 flex items-center pr-2">
+                                                    <svg class="h-5 w-5 text-gray-400 transition-transform duration-200"
+                                                         :class="{ 'rotate-180': showAssignedDropdown }"
+                                                         viewBox="0 0 20 20" 
+                                                         fill="currentColor">
+                                                        <path fill-rule="evenodd" d="M10 3a.75.75 0 01.55.24l3.25 3.5a.75.75 0 11-1.1 1.02L10 4.852 7.3 7.76a.75.75 0 01-1.1-1.02l3.25-3.5A.75.75 0 0110 3zm-3.76 9.2a.75.75 0 011.06.04l2.7 2.908 2.7-2.908a.75.75 0 111.1 1.02l-3.25 3.5a.75.75 0 01-1.1 0l-3.25-3.5a.75.75 0 01.04-1.06z" clip-rule="evenodd" />
+                                                    </svg>
+                                                </span>
+                                            </button>
+
+                                            <!-- Dropdown Menu -->
+                                            <ul x-show="showAssignedDropdown"
+                                                x-transition:enter="transition ease-out duration-100"
+                                                x-transition:enter-start="transform opacity-0 scale-95"
+                                                x-transition:enter-end="transform opacity-100 scale-100"
+                                                x-transition:leave="transition ease-in duration-75"
+                                                x-transition:leave-start="transform opacity-100 scale-100"
+                                                x-transition:leave-end="transform opacity-0 scale-95"
+                                                class="absolute z-20 mt-1 max-h-56 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+                                            </ul>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -178,6 +218,7 @@
                                             :class="{
                                                 'bg-green-200 text-green-900 focus:ring-green-500 dark:bg-green-700 dark:text-green-100': task.status === 'done',
                                                 'bg-yellow-200 text-yellow-900 focus:ring-yellow-500 dark:bg-yellow-700 dark:text-yellow-100': task.status === 'on_progress'
+                                                'bg-yellow-200 text-yellow-900 focus:ring-yellow-500 dark:bg-yellow-700 dark:text-yellow-100': task.status === 'to_do'
                                             }">
                                         <option value="to_do">To Do</option>
                                         <option value="on_progress">On Progress</option>

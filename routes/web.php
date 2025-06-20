@@ -35,6 +35,10 @@ Route::get('/register', function () {
     return view('register');
 })->name('register');
 
+Route::get('/dsbrdLogin', function () {
+    return view('dsbrdLogin');
+})->name('dsbrdLogin');
+
 Route::get('/role', function () {
     return view('role');
 })->name('role');
@@ -50,6 +54,10 @@ Route::get('/team', function () {
 Route::get('/teamForum', function () {
     return view('teamForum');
 })->name('teamForum');
+
+Route::get('/teamTask', function () {
+    return view('teamTask');
+})->name('teamTask');
 
 Route::get('/member', function () {
     return view('member');
