@@ -37,7 +37,13 @@ Route::get('forgot-password', [ForgotPasswordController::class, 'showLinkRequest
 Route::post('forgot-password', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
 Route::get('reset-password/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
 Route::post('reset-password', [ResetPasswordController::class, 'reset'])->name('password.update');
+Route::get('/dsbrdLogin', function () {
+    return view('dsbrdLogin');
+})->name('dsbrdLogin');
 
+Route::get('/role', function () {
+    return view('role');
+})->name('role');
 
 
 // --- RUTE YANG MEMERLUKAN AUTENTIKASI ---
@@ -99,3 +105,11 @@ Route::middleware('auth')->group(function () {
         Route::put('/', [ProfileController::class, 'update'])->name('update');
     });
 });
+
+Route::get('/teamTask', function () {
+    return view('teamTask');
+})->name('teamTask');
+
+Route::get('/member', function () {
+    return view('member');
+})->name('member');
