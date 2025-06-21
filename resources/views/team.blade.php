@@ -102,7 +102,7 @@
 
                                 <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                                     <div class="sm:col-span-4">
-                                        <label for="task-name" class="block text-sm/6 font-medium text-gray-900">Task Name</label>
+                                        <label for="task-name" class="block text-sm/6 font-medium text-gray-900">Team Name</label>
                                         <div class="mt-2">
                                             <input type="text" name="task-name" id="task-name" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" placeholder="e.g., Finish Nugas homepage" />
                                         </div>
@@ -110,17 +110,31 @@
                                     
                                     <div class="sm:col-span-4">
                                         <label for="task-name" class="block text-sm/6 font-medium text-gray-900">Add Members</label>
-                                        <div class="mt-2">
-                                            <input type="text" name="task-name" id="task-name" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" placeholder="e.g., Finish Nugas homepage" />
-                                        </div>
+                                        <div class="mt-2 relative">
+                                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                            <svg class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+                                                <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z" clip-rule="evenodd" />
+                                            </svg>
+                                            </div>
+                                                <input type="text" 
+                                                    x-model="searchQuery"
+                                                    @input="handleSearchInput()"
+                                                    @focus="handleSearchFocus()"
+                                                    @click.away="showUserDropdown = false"
+                                                    class="block w-full rounded-md border-0 py-2.5 pl-10 pr-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm transition-colors"
+                                                    placeholder="Search users by name, email, or role..." />
+                                            </div>
                                     </div>
+
+                                
+
                                 </div>
                             </div>
                         </div>
 
                         <div class="mt-6 flex items-center justify-end gap-x-6">
                             <button type="button" class="text-sm/6 font-semibold text-gray-900" @click="showAddTaskForm = false">Cancel</button>
-                            <button type="submit" class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Save Task</button>
+                            <button type="submit" class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Create</button>
                         </div>
                     </form>
                 </div>

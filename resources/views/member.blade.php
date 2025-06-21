@@ -6,16 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @vite('resources/css/app.css')
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <title>Team Name - Members</title>
+    <title>Nugas - Team</title>
 </head>
 
-<body class="bg-[var(--bg-color)] h-full">
+<body class="antialiased font-sans bg-[var(--bg-color)]">
+
     <div>
         <header class="absolute inset-x-0 top-0 z-50">
             <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global" x-data="{ isOpen: false }">
                 <div class="flex lg:flex-1">
                     <a href="/" class="-m-1.5 p-1.5">
-                    <span class="sr-only">Nugas</span>
+                    <span class="sr-only">Team Name - Members</span>
                     <img class="h-8 w-auto" src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600" alt="" />
                     </a>
                 </div>
@@ -59,6 +60,110 @@
         <div class="relative isolate px-6 pt-14 lg:px-8">
         <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
         <div class="relative left-[calc(50%-11rem)] aspect-1155/678 w-144.5 -translate-x-1/2 rotate-30 bg-linear-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-288.75" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+    </div>
+
+    <div class="container mx-auto px-4 sm:px-8" x-data="{ showAddTaskForm: false }">
+
+        <div class="py-8">
+            <div class="flex justify-end mb-6">
+                <button type="button"
+                        class="ml-4 inline-block rounded-md px-12 py-3 text-sm font-medium text-white bg-[#443C68] hover:bg-[#281F50] focus:ring-3 focus:outline-hidden"
+                        @click="showAddTaskForm = true"> Create a Team
+                </button>
+            </div>
+
+            <div x-show="showAddTaskForm"
+                 x-transition:enter="transition ease-out duration-300"
+                 x-transition:enter-start="opacity-0 scale-90"
+                 x-transition:enter-end="opacity-100 scale-100"
+                 x-transition:leave="transition ease-in duration-200"
+                 x-transition:leave-start="opacity-100 scale-100"
+                 x-transition:leave-end="opacity-0 scale-90"
+                 class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
+                 @click.outside="showAddTaskForm = false"
+                 @keydown.escape.window="showAddTaskForm = false"
+                 x-cloak>
+
+                <div class="bg-white rounded-lg p-8 max-w-2xl w-full mx-auto shadow-xl relative">
+                    <button type="button"
+                            class="absolute top-4 right-4 text-gray-400 hover:text-gray-600"
+                            @click="showAddTaskForm = false">
+                        <span class="sr-only">Close form</span>
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+
+                    <form>
+                        <div class="space-y-12">
+                            <div class="border-b border-gray-900/10 pb-12">
+                                <h2 class="text-base/7 font-semibold text-gray-900">Add Members</h2>
+
+                                <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+                                    
+                                    <div class="sm:col-span-4">
+                                        <div class="mt-2 relative">
+                                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                            <svg class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+                                                <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z" clip-rule="evenodd" />
+                                            </svg>
+                                            </div>
+                                                <input type="text" 
+                                                    x-model="searchQuery"
+                                                    @input="handleSearchInput()"
+                                                    @focus="handleSearchFocus()"
+                                                    @click.away="showUserDropdown = false"
+                                                    class="block w-full rounded-md border-0 py-2.5 pl-10 pr-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm transition-colors"
+                                                    placeholder="Search users by name, email, or role..." />
+                                            </div>
+                                    </div>
+
+                                
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 flex items-center justify-end gap-x-6">
+                            <button type="button" class="text-sm/6 font-semibold text-gray-900" @click="showAddTaskForm = false">Cancel</button>
+                            <button type="submit" class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Add</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- table -->
+            <div class="inline-block min-w-full shadow rounded-lg overflow-hidden">
+                <table class="min-w-full leading-normal">
+                    <thead class="bg-gray-100 uppercase tracking-wider dark:bg-[#443C68] dark:text-white">
+                        <tr>
+                            <th scope="col" class="px-5 py-3 border-b-2 border-gray-200 text-left text-xs font-semibold dark:border-gray-600">User Name</th>
+                            <th scope="col" class="px-5 py-3 border-b-2 border-gray-200 text-left text-xs font-semibold w-1/3 dark:border-gray-600">Role</th>
+                            <th scope="col" class="px-5 py-3 border-b-2 border-gray-200 text-left text-xs font-semibold dark:border-gray-600">Progress</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white text-gray-900 dark:bg-[#635985] dark:text-white">
+                        <template x-for="(team, index) in teams" :key="index">
+                            <tr class="border-b border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-[#6B5B95] transition-colors">
+                                <td class="px-5 py-5 text-sm">
+                                    <div class="flex items-center">
+                                        <div class="ml-3">
+                                            <p class="whitespace-no-wrap" x-text="user.name"></p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-5 py-5 text-sm max-w-[200px] break-words">
+                                    <p x-text="role"></p>
+                                </td>
+                                <td class="px-5 py-5 text-sm">
+                                    <p x-text="progress"></p>
+                                </td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 </body>
 </html>
